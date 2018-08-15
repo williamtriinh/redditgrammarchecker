@@ -1,5 +1,5 @@
 # Spell Checker for Reddit Comments
-Checks the spelling of common words in comments of recent posts.
+Checks the spelling of common misspelled words in comments of recent posts.
 
 ## How To Use
 - NOTE* Make sure you have Python version 3.x+
