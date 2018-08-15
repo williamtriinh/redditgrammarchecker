@@ -16,10 +16,23 @@ reddit = praw.Reddit(client_id=config["config"]["client_id"],
 # Obtain subreddit instance.
 subreddit = reddit.subreddit(config["config"]["subreddit"])
 
-print("r/" + subreddit.display_name)
-print(subreddit.title)
+words = configparser.ConfigParser()
+words.read("words.ini")
 
 for submission in subreddit.new(limit=3):
-    submission.comment_sort = "new"
+    # Sort the subreddit submissions by new.
+    submission.comment_sort = "best"
+    submission.comments.replace_more(limit=0)
+    # Get the comment from the iteration.
+    for comment in submission.comments:
 
-input("press enter to close")
+        # Checks if the comment doesn't already have a reply.
+        if comment.replies.__len__() == 0:
+        
+            # Iterate through the words.ini.
+            for words_key in words["words"]:
+
+                # Compare if the comment body contains a misspelled word.
+                comment_string = comment.body.lower()
+                if words_key in comment_string:
+                    comment.reply(words_key + " is spelled wrong. The correct way is " + words["words"][words_key] + ".")
