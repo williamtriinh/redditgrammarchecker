@@ -10,7 +10,8 @@ Checks the spelling of common words in comments of recent posts.
 ```
 pip install praw
 ```
-3. Edit the config.ini file to your liking.
+3. Edit the config.ini file. replace anything between "<>" with the right values.
+4. Run app.py!
 
 ## API References
 PRAW - [link](https://github.com/praw-dev/praw)
