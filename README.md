@@ -1,7 +1,7 @@
 # Spell Checker for Reddit Comments
 Checks the spelling of common words in comments of recent posts.
 
-## Installation
+## How To Use
 - NOTE* Make sure you have Python version 3.x+
 - NOTE* You must create a Reddit app [here](https://www.reddit.com/prefs/apps/) in order to receive your client-id and client-secret keys.
 
@@ -10,7 +10,7 @@ Checks the spelling of common words in comments of recent posts.
 ```
 pip install praw
 ```
-3. Edit the config.ini file. replace anything between "<>" with the right values.
+3. Edit the config.ini file. Replace anything between "<>" with the right values.
 4. Run app.py!
 
 ## API References
